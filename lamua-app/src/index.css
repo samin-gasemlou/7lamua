@@ -1,6 +1,9 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import 'swiper/css';
 @import 'swiper/css/pagination';
+
 
 body{
     overflow-x: hidden;
@@ -14,3 +17,6 @@ body{
   font-style: normal;
 }
 
+*{
+  font-family: 'Yekan';
+}
