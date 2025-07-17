@@ -1,0 +1,15 @@
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+
+.custom-swiper-pagination .swiper-pagination-bullet {
+  background-color: #D5CFE6;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  opacity: 1;
+  transition: background-color 0.3s ease;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #ffffff;
+}
