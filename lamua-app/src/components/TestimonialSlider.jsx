@@ -1,80 +1,127 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import './TestimonialSlider.css';
+import "swiper/css";
+import "swiper/css/pagination";
+import "./TestimonialSlider.css";
+import React, { useState, useRef } from "react";
 
 const testimonials = [
   {
     id: 1,
     name: "زهرا رهنورد",
     title: "آرایشگر، جامعه‌شناس",
-    comment: "غیرممکنه از خرید بسته‌های 7Lamua پشیمون بشید. از همه دست‌اندرکاران این مجموعه با تمام وجود تشکر می‌کنم.",
+    comment:
+      "غیرممکنه از خرید بسته‌های 7Lamua پشیمون بشید. از همه دست‌اندرکاران این مجموعه با تمام وجود تشکر می‌کنم.",
+    image: "./images/FeedBackImg.png",
   },
-  {
-    id: 2,
+  {id: 2,
     name: "زهرا رهنورد",
     title: "آرایشگر، جامعه‌شناس",
-    comment: "غیرممکنه از خرید بسته‌های 7Lamua پشیمون بشید.",
+    comment:
+      "غیرممکنه از خرید بسته‌های 7Lamua پشیمون بشید. از همه دست‌اندرکاران این مجموعه با تمام وجود تشکر می‌کنم.",
+    image: "./images/FeedBackImg.png",
   },
-  {
-    id: 3,
+  {id: 3,
     name: "زهرا رهنورد",
     title: "آرایشگر، جامعه‌شناس",
-    comment: "تجربه‌ای عالی بود.",
+    comment:
+      "غیرممکنه از خرید بسته‌های 7Lamua پشیمون بشید. از همه دست‌اندرکاران این مجموعه با تمام وجود تشکر می‌کنم.",
+    image: "./images/FeedBackImg.png",
   },
-  {
-    id: 4,
+   {id: 4,
     name: "زهرا رهنورد",
     title: "آرایشگر، جامعه‌شناس",
-    comment: "ممنون از تیم حرفه‌ای.",
+    comment:
+      "غیرممکنه از خرید بسته‌های 7Lamua پشیمون بشید. از همه دست‌اندرکاران این مجموعه با تمام وجود تشکر می‌کنم.",
+    image: "./images/FeedBackImg.png",
   },
-  {
-    id: 5,
+   {id: 5,
     name: "زهرا رهنورد",
     title: "آرایشگر، جامعه‌شناس",
-    comment: "حتماً باز هم سفارش می‌دم.",
+    comment:
+      "غیرممکنه از خرید بسته‌های 7Lamua پشیمون بشید. از همه دست‌اندرکاران این مجموعه با تمام وجود تشکر می‌کنم.",
+    image: "./images/FeedBackImg.png",
   },
 ];
 
 export default function TestimonialSlider() {
-  return (
-    <div className="min-w-[390px] max-w-[639px] flex justify-center pt-4">
-      <section className="bg-[#FED2D7] rounded-[24px] w-[342px] px-4 pt-6 pb-12 relative">
-        <h2 className="text-right font-bold text-[#312651] mb-4">به ما اعتماد کرده‌اند</h2>
+  const [activeIndex, setActiveIndex] = useState(0);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
-        <Swiper
-        spaceBetween={16}
-  slidesPerView={1}
-  pagination={{
-    el: '.custom-swiper-pagination',
-    clickable: true,
-    bulletClass: 'swiper-pagination-bullet',
-    bulletActiveClass: 'swiper-pagination-bullet-active'
-  }}
-  modules={[Pagination]}
-  className="w-full"
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    if (diff > 50 && activeIndex < testimonials.length - 1) {
+      setActiveIndex((prev) => prev + 1);
+    } else if (diff < -50 && activeIndex > 0) {
+      setActiveIndex((prev) => prev - 1);
+    }
+  };
+
+  return (
+    <div className="min-w-[390px] max-w-[639px] flex items-center justify-center py-4">
+      <section className="relative w-[342px] bg-[#FED2D7] rounded-[24px] px-4 pt-6 pb-20 h-[270px]">
+        <h2 className="text-right font-[YekanBakh-Bold] text-[#312651] mb-4">
+          به ما اعتماد کرده‌اند
+        </h2>
+
+        {/* اسلاید‌ها */}
+        <div
+          className="w-full overflow-hidden"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
-          {testimonials.map((item) => (
-            <SwiperSlide key={item.id}>
-              <div className="bg-white p-4 h-[162px] rounded-tl-[16px] rounded-tr-[16px] rounded-br-[8px] rounded-bl-[24px]">
+          <div
+            className="flex transition-transform duration-500"
+            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+          >
+            {testimonials.map((item) => (
+              <div
+                key={item.id}
+                className="flex-shrink-0 w-full bg-white p-4 h-[162px] rounded-tr-[16px] rounded-tl-[16px] rounded-br-[8px] rounded-bl-[24px] font-[IranSans]"
+              >
                 <div className="flex items-center justify-end gap-4 mb-2">
                   <div className="text-right">
-                    <h3 className="font-bold text-[#312651] text-base">{item.name}</h3>
-                    <p className="text-sm text-gray-500">{item.title}</p>
+                    <h3 className="text-[#312651] text-base">{item.name}</h3>
+                    <p className="text-[13px] text-gray-400">{item.title}</p>
                   </div>
                   <div className="w-[48px] h-[48px] rounded-full overflow-hidden">
-                    <img src="./images/FeedBackImg.png" alt="user" className="w-full h-full object-cover" />
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
-                <p className="text-[#312651] text-right leading-6 text-sm">{item.comment}</p>
+                <p className="text-[#312651] text-right leading-6 text-sm">
+                  {item.comment}
+                </p>
               </div>
-            </SwiperSlide>
+            ))}
+          </div>
+        </div>
+
+        {/* دایره‌های پایین */}
+        <div className="flex justify-center gap-2 mt-4 absolute bottom-4 left-1/2 -translate-x-1/2">
+          {testimonials.map((_, index) => (
+            <div
+              key={index}
+              onClick={() => setActiveIndex(index)}
+              className={`w-[8px] h-[8px] rounded-full transition-all duration-300 cursor-pointer ${
+                index === activeIndex
+                  ? "bg-white opacity-100"
+                  : "bg-white opacity-40"
+              }`}
+            ></div>
           ))}
-        </Swiper>
-        <div className="custom-swiper-pagination absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2" />
-   
+        </div>
       </section>
     </div>
   );

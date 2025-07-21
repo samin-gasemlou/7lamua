@@ -1,22 +1,42 @@
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'swiper/css';
-@import 'swiper/css/pagination';
+
 
 
 body{
     overflow-x: hidden;
-    font-family: sans-serif;
 }
 @font-face {
-  font-family: 'Yekan';
-  src: url('fonts/yekan/Yekan.woff2') format('woff2'),
-       url('fonts/yekan/Yekan.woff') format('woff');
-  font-weight: 400;
+  font-family: 'YekanBakh-ExtraBold';
+  src: url('./assets/fonts/YekanBakh-ExtraBold.woff2') format('woff2');
+  font-weight: 600;
   font-style: normal;
 }
-
-*{
-  font-family: 'Yekan';
+@font-face {
+  font-family: 'YekanBakh-Bold';
+  src: url('./assets/fonts/YekanBakh-Bold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'YekanBakh-Regular';
+  src: url('./assets/fonts/YekanBakh-Regular.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'YekanBakh-Light';
+  src: url('./assets/fonts/YekanBakh-Light.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'IranSans';
+  src: url('./assets/fonts/IRANSansX-Regular.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
 }

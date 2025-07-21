@@ -20,7 +20,7 @@ function Home () {
       <WhyUs />
       <Media />
       <FeedBack />
-      {/* <Footer /> */}
+      <Footer /> 
     </div>
   )
 }

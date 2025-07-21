@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 
 function Description () {
   return (
-    <div className=' min-w-[390px] max-w-[639px] flex items-center justify-center pt-2' >
+      
+       <div className=' min-w-[390px] max-w-[639px] flex items-center justify-center pt-2' >
+        <Link to="/Woman">
          <div className=" w-[342px] h-[197px] flex flex-col items-start p-8 gap-4 bg-[#F2EEFC] rounded-[16px]">
           <div className=" w-full flex flex-row items-center justify-between">
              <div>
@@ -20,16 +23,18 @@ function Description () {
 
             </div>
             <div className='flex flex-col items-end justify-center w-[200px]' >
-            <span className='text-[#8061D9] tracking-wide'>0 7   L E V E L S</span>
-            <h1 className='text-[#312651] font-bold text-2xl'>شکوفایی برند زنانه</h1>
+            <span className='text-[#8061D9] tracking-widest font-sans pb-1'>0 7   L E V E L S</span>
+            <h1 className='text-[#312651] font-bold text-xl font-[YekanBakh-ExtraBold]'>شکوفایی برند زنانه</h1>
             </div>
            
           </div>
           <div className="flex items-center justify-center leading-5 w-full" dir="rtl">
-            <p className='text-[#312651]'>زنان، همواره در مسیر زندگی خود با چالش ها، فشار ها و توقعات اجتماعی و فرهنگی مواجه اند که گاه آنها را از خود حقیقی شان دور می کند.</p>
+            <p className='text-[#312651] leading-6 text-[14px] w-full font-[IranSans]'>زنان، همواره در مسیر زندگی خود با چالش ها، فشار ها و توقعات اجتماعی و فرهنگی مواجه اند که گاه آنها را از خود حقیقی شان دور می کند.</p>
           </div>
          </div>
-    </div>
+         </Link>
+       </div>
+      
   )
 }
 

@@ -16,9 +16,9 @@ function Hero() {
 <circle opacity="0.1" cx="164.5" cy="73.5" r="164.25" stroke="#F2EEFC" stroke-width="0.5"/>
 </svg>
 
-<h1 className='absolute top-[35px] left-[18px] text-white text-2xl font-bold font-sans'>از امروز شروع کن</h1>
-<p className='absolute top-[75px] left-[14px] text-gray-50 font-serif'>برنامه ورزشی کاملا منعطف</p>
-<button className="absolute left-[50px] top-[152px] w-[100px] h-[32px] flex justify-center items-center py-2 px-[11px] gap-1 bg-white shadow-[0_4px_10px_rgba(0,0,0,0.15)] rounded-[8px]">
+<h1 className='absolute top-[35px] left-[18px] text-white text-2xl font-[YekanBakh-ExtraBold]'>از امروز شروع کن</h1>
+<p className='absolute top-[75px] left-[14px] text-[#ffffff9a] font-[IranSans] text-sm'>برنامه ورزشی کاملا منعطف</p>
+<button className="absolute left-[50px] top-[152px] w-[100px] h-[32px] flex justify-center items-center py-2 px-[11px] gap-1 bg-white shadow-[0_4px_10px_rgba(0,0,0,0.15)] rounded-[8px] font-[IranSans]">
   ...بیشتر
 </button>
 
