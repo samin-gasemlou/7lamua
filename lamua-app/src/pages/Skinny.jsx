@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from "react";
 import Header from '../sections/Header';
 import ImageHero from '../components/ImageHero';
 import CourseBox from '../components/CourseBox';
 import CourseBoxV2 from '../components/CourseBoxV2';
 import Footer from '../sections/Footer'
+import DesktopHeader from '../sections/DesktopHeader';
+import LoginWarningModal from '../components/LoginWarningModal';
+import Login01 from './Login01';
 
 function Skinny () {
+      const [showWarning, setShowWarning] = useState(false);
+       const [showLogin, setShowLogin] = useState(false);
   return (
-    <div className='pt-[95px]' >
+    <div className='pt-[95px] md:pt-0' >
       <Header />
+      <DesktopHeader/>
        <ImageHero
       title="رژیم لاغری"
       title2="Weight loss diet"
@@ -19,6 +25,7 @@ function Skinny () {
           }
       imageSrc={"/images/Skinny.png"}
       />
+         <div className="md:grid md:grid-cols-3 md:gap-6  md:m-auto flex flex-col items-center justify-center gap-0 xl:w-[65%] lg:w-[95%] md:w-[95%]" dir='rtl'>
        <CourseBox
       index="1"
         number="0"
@@ -27,7 +34,8 @@ function Skinny () {
         description="ما به جای تمرکز افراطی بر کالری یا حذف غذاها، بر یک فلسفه عمیق تمرکز کردیم:
 تحول همزمان ذهن، بدن و رابطه با خود "
         btnTxt="مشاهده"
-        linkTo="/SingleSkinny"
+        linkTo="/SingleIntro/skinny"
+        
       />
       <CourseBoxV2
       index="1"
@@ -36,7 +44,25 @@ function Skinny () {
       title="بیداری آگاهانه"
       btnTxt="خرید مرحله"
       buttonClassName="bg-[#8061D9] text-[#ffff]"
+       onClick={() => setShowWarning(true)}
+      
       />
+
+       {/* مودال اخطار ورود */}
+                        <LoginWarningModal
+                          show={showWarning}
+                          onClose={() => setShowWarning(false)}
+                          onLogin={() => {
+                            setShowWarning(false); // بستن مودال اول
+                            setShowLogin(true);    // باز کردن مودال دوم
+                          }}
+                        />
+                  
+                        {/* مودال ورود شماره موبایل */}
+                        <Login01
+                          isOpen={showLogin}
+                          onClose={() => setShowLogin(false)}
+                        />
       <CourseBoxV2
       index="2"
       number="02"
@@ -109,6 +135,7 @@ function Skinny () {
            }
       buttonClassName='border border-[#312651] shadow-[none] text-[#312651]'
       />
+      </div>
       <Footer />
     </div>
   )

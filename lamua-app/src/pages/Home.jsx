@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../sections/Header'
+import DesktopHeader from '../sections/DesktopHeader'
 import Hero from '../sections/Hero'
 import Services from '../sections/Services'
 import Description from '../sections/Description'
@@ -9,10 +10,12 @@ import FeedBack from '../sections/FeedBack'
 import Footer from '../sections/Footer'
 import Description2 from '../sections/Description2'
 
+
 function Home () {
   return (
-    <div className='pt-[95px]'>
+    <div className='pt-[95px] md:pt-0'>
       <Header />
+      <DesktopHeader />
       <Hero />
       <Services />
       <Description />

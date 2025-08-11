@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import Login01 from "../pages/Login01";
 export default function MobileMenu({ isOpen, onClose }) {
+ const [showLoginModal, setShowLoginModal] = useState(false);
+  
   if (!isOpen) return null;
 
   return (
-    <div className="fixed top-0 right-0 w-full h-full bg-white z-50 px-4 py-6 font-bold">
+    <div className="fixed top-0 right-0 w-full h-full z-50 px-4 py-6 font-bold bg-white">
       {/* Header */}
       <div className="flex items-center justify-between border-b pb-4 border-[#FCD2D6]">
         <div className="flex items-center gap-2">
@@ -29,20 +31,24 @@ export default function MobileMenu({ isOpen, onClose }) {
 
       {/* Auth Buttons */}
       <div className="grid grid-cols-2 border-y divide-x text-center text-[#312651] text-[16px] border-[#FCD2D6] p-2 font-[IranSans]">
-        <button className="py-2">ورود</button>
-        <button className="py-2">ثبت نام</button>
+       <button  onClick={() => setShowLoginModal(true)} className="py-2">ورود</button>
+        <button  onClick={() => setShowLoginModal(true)} className="py-2">ثبت نام</button>
       </div>
-
+ {/* نمایش مودال وقتی isOpen=true باشه */}
+      <Login01
+        isOpen={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+      />
       {/* Links */}
       <ul className="flex flex-col gap-3 text-[#312651] mt-4 text-center text-[16px] font-[IranSans]">
         <li className="border-b py-2 border-[#FCD2D6] flex items-center justify-center w-full h-[50px]">
           <Link to="/">صفحه اصلی</Link>
         </li>
         <li className="border-b py-2 border-[#FCD2D6] flex items-center justify-center w-full h-[50px]">
-          <Link to="/">درباره ما</Link>
+          <Link to="/AboutUs">درباره ما</Link>
         </li>
         <li className="border-b py-2 border-[#FCD2D6] flex items-center justify-center w-full h-[50px]">
-          <Link to="/">بلاگ</Link>
+          <Link to="/Blog">بلاگ</Link>
         </li>
       </ul>
     </div>

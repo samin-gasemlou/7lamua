@@ -65,7 +65,7 @@ export default function TestimonialSlider() {
   };
 
   return (
-    <div className="min-w-[390px] max-w-[639px] flex items-center justify-center py-4">
+    <div className="w-full flex items-center justify-center py-4 md:hidden">
       <section className="relative w-[342px] bg-[#FED2D7] rounded-[24px] px-4 pt-6 pb-20 h-[270px]">
         <h2 className="text-right font-[YekanBakh-Bold] text-[#312651] mb-4">
           به ما اعتماد کرده‌اند

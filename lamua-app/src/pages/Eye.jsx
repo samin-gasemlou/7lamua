@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useState } from "react";
 import Header from '../sections/Header';
 import ImageHero from '../components/ImageHero';
 import CourseBox from '../components/CourseBox';
 import CourseBoxV2 from '../components/CourseBoxV2';
 import Footer from '../sections/Footer'
-
+import DesktopHeader from '../sections/DesktopHeader';
+import LoginWarningModal from '../components/LoginWarningModal';
+import Login01 from './Login01';
+import PaymentModal from "../components/PaymentModal";
 function Eye () {
+  const [showWarning, setShowWarning] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+   const [showModal, setShowModal] = useState(false);
+
+  const handlePay = () => {
+    alert('درگاه پرداخت باز شد!');
+    setShowModal(false);
+  };
+
   return (
-    <div className='pt-[95px]' >
+    <div className='pt-[95px] md:pt-0' >
       <Header />
+      <DesktopHeader/>
        <ImageHero
       title="ابرو و مژه"
       title2="Eyebrows and eyelashes"
@@ -18,14 +31,16 @@ function Eye () {
           }
       imageSrc={"/images/Eye.png"}
       />
+        <div className=" md:grid md:grid-cols-3 md:gap-6  md:m-auto flex flex-col items-center justify-center gap-0 xl:w-[65%] lg:w-[95%] md:w-[95%]       
+            " dir='rtl'>
        <CourseBox
-      index="1"
+        index="1"
         number="0"
         EnTitle="START"
         title="مقدمه مراقبت آگاهانه"
         description="ابروهایی که معنا دارند، مژه‌هایی که حس دارند، درست مثل امضایی نانوشته، پیش از هر کلمه با تو صحبت می‌کنند."
         btnTxt="مشاهده"
-        linkTo="/SingleEye"
+        linkTo="/SingleIntro/eye"
       />
       <CourseBoxV2
       index="1"
@@ -34,6 +49,22 @@ function Eye () {
       title="پاک سازی و بازیابی"
       btnTxt="خرید مرحله"
       buttonClassName="bg-[#8061D9] text-[#ffff]"
+       onClick={() => setShowWarning(true)}
+      />
+       {/* مودال اخطار ورود */}
+      <LoginWarningModal
+        show={showWarning}
+        onClose={() => setShowWarning(false)}
+        onLogin={() => {
+          setShowWarning(false); // بستن مودال اول
+          setShowLogin(true);    // باز کردن مودال دوم
+        }}
+      />
+
+      {/* مودال ورود شماره موبایل */}
+      <Login01
+        isOpen={showLogin}
+        onClose={() => setShowLogin(false)}
       />
       <CourseBoxV2
       index="2"
@@ -46,6 +77,12 @@ function Eye () {
           </svg>
            }
       buttonClassName='border border-[#312651] shadow-[none] text-[#312651]'
+      onClick={() => setShowModal(true)}
+      />
+       <PaymentModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        onPay={handlePay}
       />
       <CourseBoxV2
       index="3"
@@ -95,6 +132,7 @@ function Eye () {
            }
       buttonClassName='border border-[#312651] shadow-[none] text-[#312651]'
       />
+    
      <CourseBoxV2
       index="7"
       number="07"
@@ -107,6 +145,7 @@ function Eye () {
            }
       buttonClassName='border border-[#312651] shadow-[none] text-[#312651]'
       />
+      </div>
       <Footer />
     </div>
   )

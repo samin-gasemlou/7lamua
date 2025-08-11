@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from "react";
 import Header from '../sections/Header';
 import ImageHero from '../components/ImageHero';
 import CourseBox from '../components/CourseBox';
 import CourseBoxV2 from '../components/CourseBoxV2';
 import Footer from '../sections/Footer'
-
+import DesktopHeader from '../sections/DesktopHeader';
+import LoginWarningModal from '../components/LoginWarningModal';
+import Login01 from './Login01';
 function Woman () {
+      const [showWarning, setShowWarning] = useState(false);
+       const [showLogin, setShowLogin] = useState(false);
   return (
-    <div className='pt-[95px]' >
+    <div className='pt-[95px] md:pt-0' >
       <Header />
+      <DesktopHeader/>
        <ImageHero
       title="شکوفایی برند زنانه"
       title2="The flourishing of women's brands"
@@ -19,6 +24,7 @@ function Woman () {
           }
       imageSrc={"/images/Woman.png"}
       />
+        <div className="md:grid md:grid-cols-3 md:gap-6  md:m-auto flex flex-col items-center justify-center gap-0 xl:w-[65%] lg:w-[95%] md:w-[95%]" dir='rtl'>
        <CourseBox
       index="1"
         number="0"
@@ -26,7 +32,7 @@ function Woman () {
         title="مــقــدمــه"
         description="زنان، همواره در مسیر زندگی خود با چالش ها، فشار ها و توقعات اجتماعی و فرهنگی مواجه اند که گاه آنها را از خود حقیقی شان دور می کند."
         btnTxt="مشاهده"
-        linkTo="/SingleWoman"
+        linkTo="/SingleIntro/woman"
       />
       <CourseBoxV2
       index="1"
@@ -35,7 +41,24 @@ function Woman () {
       title="بیداری"
       btnTxt="خرید مرحله"
       buttonClassName="bg-[#8061D9] text-[#ffff]"
+       onClick={() => setShowWarning(true)}
+
       />
+        {/* مودال اخطار ورود */}
+            <LoginWarningModal
+              show={showWarning}
+              onClose={() => setShowWarning(false)}
+              onLogin={() => {
+                setShowWarning(false); // بستن مودال اول
+                setShowLogin(true);    // باز کردن مودال دوم
+              }}
+            />
+      
+            {/* مودال ورود شماره موبایل */}
+            <Login01
+              isOpen={showLogin}
+              onClose={() => setShowLogin(false)}
+            />
       <CourseBoxV2
       index="2"
       number="02"
@@ -108,6 +131,7 @@ function Woman () {
            }
       buttonClassName='border border-[#312651] shadow-[none] text-[#312651]'
       />
+      </div>
       <Footer />
     </div>
   )

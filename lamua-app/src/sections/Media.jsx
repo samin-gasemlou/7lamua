@@ -3,8 +3,8 @@ import React from 'react'
 
 function Media () {
   return (
-    <div className='min-w-[390px] max-w-[639px] flex flex-col items-center justify-center pt-11 relative' >
-         <div className='w-full flex flex-col items-end justify-center px-10 pb-4'>
+    <div className='w-full md:hidden flex flex-col items-center justify-center pt-11 relative' >
+         <div className='w-full flex flex-col items-end justify-center px-10 pb-4 z-10'>
           <h1 className='text-3xl font-bold text-[#312651] font-[YekanBakh-ExtraBold]'>مارو دنبال کن</h1>
           <h2 className='text-xl text-[#8061D9] font-[YekanBakh-Regular]'>(:خوشحال میشیم</h2>
          </div>

@@ -6,7 +6,7 @@ function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
   return (
         /*Start Header*/
-    <header className="absolute top-0 left-0 min-w-[390px] max-w-[639px] h-[88px] flex justify-between items-center p-6 gap-[120px]">
+    <header className=" md:hidden absolute top-0 left-0 w-full h-[88px] flex justify-between items-center p-6 gap-[120px]">
         {/*Start 7Lamua Styles + logo*/}
         <div className="flex justify-center items-center p-0 gap-[10px] w-[119px] h-[35px]">
             <div className="w-[25px] h-[29.76px] flex items-center justify-center">

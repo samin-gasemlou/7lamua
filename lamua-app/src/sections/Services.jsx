@@ -1,10 +1,9 @@
-import React from 'react'
 import ServiceBox from '../components/ServiceBox'
 import { Link } from 'react-router-dom';
 
 function Services () {
   return (
-    <div className=' min-w-[390px] max-w-[639px] flex items-center justify-center pt-2'>
+    <div className='md:hidden w-full flex items-center justify-center pt-2 md:pt-0'>
       <div className="w-[342px] h-[168px] flex items-center justify-center p-4 gap-2 bg-[#FCD2D6] rounded-[16px]" >
         <Link to="/Eye">
         <ServiceBox icon={<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">

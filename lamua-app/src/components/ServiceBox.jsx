@@ -2,7 +2,7 @@ import React from 'react'
 
 function ServiceBox({ icon, title, description }) {
   return (
-    <div className=' w-[100px] h-[140px] bg-[#ffffff81] [border-radius:8px_24px_8px_8px] ' >
+    <div className=' w-[100px] md:w-[120px] h-[140px] md:h-[160px] bg-[#ffffff81] [border-radius:8px_24px_8px_8px] ' >
         <div className='w-full relative'>
     <div className=" w-[48px] h-[48px] bg-[#ffffff] rounded-full absolute top-[10px] right-[10px] flex items-center justify-center">
       {icon}

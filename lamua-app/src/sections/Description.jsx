@@ -5,9 +5,41 @@ import { Link } from 'react-router-dom';
 function Description () {
   return (
       
-       <div className=' min-w-[390px] max-w-[639px] flex items-center justify-center pt-2' >
-        <Link to="/Woman">
-         <div className=" w-[342px] h-[197px] flex flex-col items-start p-8 gap-4 bg-[#F2EEFC] rounded-[16px]">
+       <div className=' w-full flex items-center justify-center lg:gap-2 lg:p-0 md:gap-4 md:p-4 md:pt-2 pt-2' >
+
+        
+                       <Link className='hidden sm:flex items-center justify-center lg:w-[54%]' to="/Brand">
+                  <div className="  h-[197px] w-full flex flex-col items-start p-8 gap-4 bg-[#F2EEFC] rounded-[16px]">
+                   <div className=" w-full flex flex-row items-center justify-between">
+                       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <rect width="48" height="48" rx="24" fill="url(#paint0_linear_1_317)"/>
+         <path d="M24 11.5C20.5595 11.5 17.75 14.3095 17.75 17.75C17.75 21.1905 20.5595 24 24 24C26.4399 24 28.7928 22.535 30.6199 21.1545C32.447 19.7741 33.7449 18.3921 33.7449 18.3921C33.9083 18.2182 33.9992 17.9886 33.9992 17.75C33.9992 17.5114 33.9083 17.2818 33.7449 17.1079C33.7449 17.1079 32.447 15.7259 30.6199 14.3455C28.7928 12.965 26.4399 11.5 24 11.5ZM24 13.375C25.6226 13.375 27.801 14.5663 29.4895 15.842C30.753 16.7967 31.2338 17.3301 31.6526 17.75C31.2338 18.1699 30.753 18.7033 29.4895 19.658C27.801 20.9337 25.6226 22.125 24 22.125C21.573 22.125 19.625 20.177 19.625 17.75C19.625 15.323 21.573 13.375 24 13.375ZM16.4866 26.5C15.1242 26.5 14 27.6242 14 28.9866V29.9375C14 32.1901 15.4245 33.9326 17.3167 34.9766C19.2088 36.0205 21.6051 36.5 24 36.5C26.3949 36.5 28.7912 36.0205 30.6833 34.9766C32.5751 33.9328 33.9995 32.1907 34 29.9387L34.0012 28.9878V28.9866C34.0012 27.6242 32.8758 26.5 31.5134 26.5H16.4866ZM16.4866 28.375H22.5571L23.4641 30.3391L21.8162 34.4602C20.4668 34.2598 19.2088 33.8801 18.2224 33.3359C16.7161 32.5049 15.875 31.4349 15.875 29.9375V28.9866C15.875 28.6377 16.1377 28.375 16.4866 28.375ZM25.4429 28.375H31.5134C31.8623 28.375 32.1262 28.6377 32.1262 28.9866L32.125 29.9375C32.125 31.4349 31.2839 32.5049 29.7776 33.3359C28.7912 33.8801 27.5332 34.2598 26.1838 34.4602L24.5359 30.3391L25.4429 28.375Z" fill="#F2EEFC"/>
+         <defs>
+         <linearGradient id="paint0_linear_1_317" x1="46.386" y1="2.4385" x2="-4.92631" y2="18.5572" gradientUnits="userSpaceOnUse">
+         <stop stop-color="#8061D9"/>
+         <stop offset="1" stop-color="#6A4BC4"/>
+         </linearGradient>
+         </defs>
+         </svg>
+                     <div className='flex flex-col items-end w-full justify-center w-[200px]' >
+                     <span className='text-[#8061D9] tracking-widest font-sans pb-1'>0 7   L E V E L S</span>
+                     <h1 className='text-[#312651] font-bold text-xl font-[YekanBakh-ExtraBold]'>برند سازی شخصی</h1>
+                     </div>
+                     <div>
+                      
+         
+         
+                     </div>
+                    
+                   </div>
+                   <div className="flex items-center justify-center leading-5 text-[15px] md:text-[13px] w-full font-[IranSans]" dir="rtl">
+                     <p className='text-[#312651]'>برندسازی شخصی یعنی ساختن تصویری از خودت که فقط بر پایه قضاوت های بیرونی نیست، بلکه بیانگر داستان، ارزش ها، اهداف و قدرت درون توست!</p>
+                   </div>
+                  </div>
+                       </Link>
+          
+        <Link className='flex items-center justify-center lg:w-[38%] md:w-[40%] w-full' to="/Woman">
+         <div className=" w-[342px] lg:w-full h-[197px] flex flex-col items-start p-8 gap-4 bg-[#F2EEFC] rounded-[16px]">
           <div className=" w-full flex flex-row items-center justify-between">
              <div>
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,10 +61,13 @@ function Description () {
            
           </div>
           <div className="flex items-center justify-center leading-5 w-full" dir="rtl">
-            <p className='text-[#312651] leading-6 text-[14px] w-full font-[IranSans]'>زنان، همواره در مسیر زندگی خود با چالش ها، فشار ها و توقعات اجتماعی و فرهنگی مواجه اند که گاه آنها را از خود حقیقی شان دور می کند.</p>
+            <p className='text-[#312651] leading-6 text-[14px] md:text-[13px] w-full font-[IranSans]'>زنان، همواره در مسیر زندگی خود با چالش ها، فشار ها و توقعات اجتماعی و فرهنگی مواجه اند که گاه آنها را از خود حقیقی شان دور می کند.</p>
           </div>
          </div>
          </Link>
+
+         
+
        </div>
       
   )

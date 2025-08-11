@@ -5,13 +5,14 @@ import Skin from './pages/Skin';
 import Skinny from './pages/Skinny';
 import Woman from './pages/Woman';
 import Brand from './pages/Brand';
-import SingleWoman from './pages/SingleWoman'
-import SingleEye from './pages/SingleEye';
-import SingleSkin from './pages/SingleSkin'
-import SingleSkinny from './pages/SingleSkinny'
-import SingleBrand from './pages/SingleBrand'
+import SingleIntro from './pages/SingleIntro';
 import { Routes, Route } from 'react-router-dom';
-
+import AboutUs from './pages/AboutUs';
+import Blog from './pages/Blog';
+import Login01 from './pages/Login01';
+import Login02 from './pages/Login02';
+import SingleBlog from './pages/SingleBlog';
+import Support from './pages/Support';
 
 function App() {
   return (
@@ -23,11 +24,13 @@ function App() {
       <Route path="/Skinny" element={<Skinny />} />
       <Route path="/Woman" element={<Woman />} />
       <Route path="/Brand" element={<Brand />} />
-      <Route path="/SingleWoman" element={<SingleWoman />} />
-      <Route path="/SingleEye" element={<SingleEye />} />
-      <Route path="/SingleSkin" element={<SingleSkin />} />
-      <Route path="/SingleSkinny" element={<SingleSkinny />} />
-      <Route path="/SingleBrand" element={<SingleBrand />} />
+      <Route path="/SingleIntro/:id" element={<SingleIntro />} />
+      <Route path="/AboutUs" element={<AboutUs />} />
+      <Route path="/Blog" element={<Blog />} />
+      <Route path="/Login01" element={<Login01 />} />
+      <Route path="/Login02" element={<Login02 />} />
+      <Route path="/Support" element={<Support />} />
+      <Route path="/SingleBlog/:id" element={<SingleBlog />} />
         </Routes>
     </div>
   )
