@@ -4,7 +4,7 @@ import ImageHero from '../components/ImageHero'
 import Footer from '../sections/Footer'
 import DesktopHeader from '../sections/DesktopHeader'
 import { useParams } from "react-router-dom";
-function SingleIntro () {
+function SingleIntro ({linkTo}) {
    const { id } = useParams();
 
   // دیتای نمونه برای هر صفحه
@@ -64,6 +64,7 @@ function SingleIntro () {
       </svg>
           }
       imageSrc={page.imageSrc}
+      
       />
       <div className='w-full flex items-center justify-center md:justify-between md:px-32 mt-32'>
          <button className="hidden md:flex text-[#312651] font-[IranSans] box-border flex-row justify-center items-center p-2 px-12 gap-2 text-[13px] w-[178px] h-[48px] border border-[#312651] rounded-lg ">دانلود PDF <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">

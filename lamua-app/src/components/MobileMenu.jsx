@@ -50,6 +50,9 @@ export default function MobileMenu({ isOpen, onClose }) {
         <li className="border-b py-2 border-[#FCD2D6] flex items-center justify-center w-full h-[50px]">
           <Link to="/Blog">بلاگ</Link>
         </li>
+         <li className="border-b py-2 border-[#FCD2D6] flex items-center justify-center w-full h-[50px]">
+          <Link to="/Support">پشتیبانی</Link>
+        </li>
       </ul>
     </div>
   );

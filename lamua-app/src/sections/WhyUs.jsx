@@ -1,5 +1,5 @@
 import Testimonials from "../components/Testimonials"
-
+import {Link} from 'react-router-dom'
 function WhyUs () {
   return (
     <div className='w-full md:flex md:flex-row md:items-end md:justify-center md:pt-7 md:gap-2'>
@@ -41,9 +41,11 @@ function WhyUs () {
 </p>
          </div>
          <div>
+          <Link to='/AboutUs'>
           <button className=" w-[202px] h-10 flex justify-center items-center py-2 px-[11px] gap-1 bg-white border border-[#D5CFE6] rounded-[8px] text-base text-[#312651] font-[IranSans]">
 ...مطالعه بیشتر
          </button>
+         </Link>
 
          </div>
     </div>

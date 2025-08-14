@@ -11,7 +11,7 @@ function ImageHero ({imageSrc,title,title2,icon}) {
          </picture>
          <div className='w-full min-h-20 absolute top-32 md:top-20 left-0 flex flex-col items-center justify-center'>
           <div className=" w-[64px] h-[64px] bg-[#312651] rounded-full flex items-center justify-center">
-          {icon}
+         {icon}
          </div>
          <div className='flex flex-col items-center justify-center pt-4'>
           <h1 className='tracking-[-0.04em] text-[#312651] font-[YekanBakh-ExtraBold]'>{title}</h1>
